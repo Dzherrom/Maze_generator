@@ -1,5 +1,5 @@
 from tkinter import Tk, BOTH, Canvas
-
+from draw import line
 class window:
 
     def __init__(self, width, height):
@@ -11,6 +11,10 @@ class window:
         self.cv.pack(fill=BOTH, expand=1)
         self.root.protocol("WM_DELETE_WINDOW", self.close)
         
+    def draw_line(line, fill_color):
+        self.draw()
+        pass
+
     # Redraw method updates
     def redraw(self):
         self.root.update()
