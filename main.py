@@ -1,9 +1,9 @@
-from graphics import window
+from graphics import Window, Line, Point
 
 def run():
-    win = window(500, 500)
-    draw_line()
-    draw_line()
+    win = Window(800, 600)
+    l = Line(point1=(50,50), point2=(400, 400))
+    win.draw_line(l, "red")
     win.wait_for_close()
 
 if __name__ == '__main__':
