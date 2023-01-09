@@ -1,8 +1,8 @@
-from graphics import Window, Line, Point
+from graphics import Window, Line
 
 def run():
     win = Window(800, 600)
-    l = Line(point1=(50,50), point2=(400, 400))
+    l = Line(50, 400, 20, 350)
     win.draw_line(l, "red")
     win.wait_for_close()
 

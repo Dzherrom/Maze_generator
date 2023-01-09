@@ -6,11 +6,11 @@ class Window:
         self.root = Tk()
         self.root.title('Ventana de prueba')
         self.running = False
-        self.canvas = Canvas(self.root, bg="blue", height=height, width=width)
+        self.canvas = Canvas(self.root, bg="white", height=height, width=width)
         self.canvas.pack(fill=BOTH, expand=1)
         self.root.protocol("WM_DELETE_WINDOW", self.close)
         
-    def draw_line(self, line, fill_color="black"):
+    def draw_line(self, line, fill_color):
         line.draw(self.canvas, fill_color)
 
     # Redraw method updates
@@ -29,22 +29,19 @@ class Window:
     def close(self):
         self.running = False
 
-class Point:
-    
-    #stablish coordinates
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
 
 class Line:
-    # stabilsh points 
-    def __init__(self, point1, point2):
-        self.point1 = point1
-        self.point2 = point2
+    # stabilsh coordinates
+    def __init__(self, x1, x2, y1, y2):
+        self.x1 = x1
+        self.x2 = x2
+        self.y1 = y1
+        self.y2 = y2
+
 
     # draw line with point arguments    
     def draw(self, canvas, fill_color="black"):
-        canvas.create_line(self.point1.x, self.point1.y, self.point2.x, self.point2.y,
-         fill=fill_color, width=2
-        )
+        canvas.create_line(self.x1, self.y1, self.x2, self.y2, fill=fill_color,
+)
         canvas.pack(fill=BOTH, expand=1)        
+
